@@ -11,8 +11,8 @@ import { useForm } from "react-hook-form";
 import {login} from "../services/authService";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
-
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 function Login() {
   const [loginError, setLoginError] = useState("");
@@ -21,11 +21,15 @@ function Login() {
   handleSubmit,
   formState: { errors },
 } = useForm();
+const { setToken } = useContext(AuthContext);
 const navigate = useNavigate();
 const onSubmit = async (data) => {
   try {
+        setLoginError("");
+
     const response = await login(data);
-    localStorage.setItem("token", response.token);
+   setToken(response.token);
+localStorage.setItem("token", response.token);
     navigate("/dashboard");
   } catch (error) {
    setLoginError(error.message);
