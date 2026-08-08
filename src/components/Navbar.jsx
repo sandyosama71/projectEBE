@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+
+import { ThemeContext } from "../theme/ThemeContext";
 function Navbar() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
     const navigate = useNavigate();
 const { setToken } = useContext(AuthContext);
 const handleLogout = () => {
@@ -27,6 +30,9 @@ return (
         </Button>
         <Button color="inherit" onClick={handleLogout}>
   Logout
+</Button>
+<Button color="inherit" onClick={toggleTheme}>
+  {theme === "light" ? "🌙 Dark" : "☀️ Light"}
 </Button>
    </Toolbar>
   </AppBar>

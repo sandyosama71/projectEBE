@@ -2,7 +2,7 @@
   "products": [
     {
       "name": "Laptop",
-      "price": "25",
+      "price": "2500",
       "category": "Electronics",
       "image": "https://picsum.photos/300/200?random=1",
       "id": "1"
@@ -20,20 +20,6 @@
       "price": 1200,
       "category": "Furniture",
       "image": "https://picsum.photos/300/200?random=3"
-    },
-    {
-      "name": "Wireless Headphones",
-      "price": "25000",
-      "category": "Electronics",
-      "image": "https://picsum.photos/300/200?random=1",
-      "id": "xjIivWzWqy4"
-    },
-    {
-      "name": "Headphones",
-      "price": "8888",
-      "category": "Electronics",
-      "image": "https://picsum.photos/300/200?random=1",
-      "id": "Xe2igey99-I"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
